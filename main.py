@@ -1,5 +1,6 @@
 import discord
 import datetime
+import settings
 
 client = discord.Client()
 
@@ -26,46 +27,46 @@ async def on_message(message):
 #Hier den Stundenplan einbauen
         if datetime.datetime.today().weekday() == 5: #Samstag
             await message.channel.send("Hier ist der Stunden plan für übermorgen:")
-            await message.channel.send("1/2: Spanisch bei Fr. X")
-            await message.channel.send("3/4: Fach1 bei Hr. X")
-            await message.channel.send("5/6: Kunst bei Herr X")
+            await message.channel.send(settings.montag1)
+            await message.channel.send(settings.montag2)
+            await message.channel.send(settings.montag3)
 
         if datetime.datetime.today().weekday() == 6: #Sonntag
             await message.channel.send("Hier ist der Stunden plan für morgen:")
-            await message.channel.send("1/2: Spanisch bei Fr. X")
-            await message.channel.send("3/4: Fach1 bei Hr. X")
-            await message.channel.send("5/6: Kunst bei Herr X")
+            await message.channel.send(settings.montag1)
+            await message.channel.send(settings.montag2)
+            await message.channel.send(settings.montag3)
 
         if datetime.datetime.today().weekday() == 0: #montag
             await message.channel.send("Hier ist der Stunden plan für morgen:")
-            await message.channel.send("1/2: Fach1 bei Fr. X")
-            await message.channel.send("3/4: Sport bei Hr. X")
-            await message.channel.send("5/6: Physik bei Hr. X")
+            await message.channel.send(settings.dienstag1)
+            await message.channel.send(settings.dienstag2)
+            await message.channel.send(settings.dienstag3)
 
         if datetime.datetime.today().weekday() == 1: #dienstag
             await message.channel.send("Hier ist der Stunden plan für morgen:")
-            await message.channel.send("1/2: Fach1 bei Hr. X")
-            await message.channel.send("3/4: Spanisch bei Fr. X")
-            await message.channel.send("5/6: Geschichte bei Fr. Norden")
+            await message.channel.send(settings.mittwoch1)
+            await message.channel.send(settings.mittwoch2)
+            await message.channel.send(settings.mittwoch3)
 
         if datetime.datetime.today().weekday() == 2: #mittwoch
             await message.channel.send("Hier ist der Stunden plan für morgen:")
-            await message.channel.send("1/2: Fach1 bei Hr. X")
-            await message.channel.send("3/4: Erdkunde bei Fr. X")
-            await message.channel.send("5/6: Fach1 bei Fr. X")
+            await message.channel.send(settings.donnerstag1)
+            await message.channel.send(settings.donnerstag2)
+            await message.channel.send(settings.donnerstag3)
 
         if datetime.datetime.today().weekday() == 3: #donnerstag
             await message.channel.send("Hier ist der Stunden plan für Freitag:")
-            await message.channel.send("1/2: Bio bei Hr. X")
-            await message.channel.send("3/4: Religion bei Hr. X (richtig?)")
-            await message.channel.send("5/6: Fach1 bei Hr. X")
+            await message.channel.send(settings.freitag1)
+            await message.channel.send(settings.freitag2)
+            await message.channel.send(settings.freitag3)
 
         if datetime.datetime.today().weekday() == 4: # freitag
             await message.channel.send("Hier ist der Stunden plan für Montag:")
-            await message.channel.send("1/2: Spanisch bei Fr. X")
-            await message.channel.send("3/4: Fach1 bei Hr. X")
-            await message.channel.send("5/6: Kunst bei Herr X")
+            await message.channel.send(settings.montag1)
+            await message.channel.send(settings.montag2)
+            await message.channel.send(settings.montag3)
 
 
 
-client.run('TOKEN')
+client.run(settings.token)
